@@ -1,44 +1,16 @@
-const pessoa = {
-    nome: 'Thiago',
-    idade: 31,
-    profissao: 'Desenvolvedor'
+let valorAny: any;
+valorAny = 3;
+valorAny = 'ola';
+valorAny = true;
+
+let valorString: string = 'teste';
+valorString = valorAny;
+let valorString2: string = 'testao';
+valorString2 = valorAny;
+
+function somarStrings(string1: string, string2: string) {
+    console.log(string1 + string2);
 }
 
-interface Pessoa {
-    nome: string,
-    idade: number,
-    profissao?: Profissao
-}
-
-interface Estudante extends Pessoa {
-    materias: string[]
-}
-
-enum Profissao {
-    Desenvolvedor,
-    Arquiteto,
-    Engenheiro,
-    QA,
-    SquadLeader
-}
-
-const thiago: Pessoa = {
-    nome: 'Thiago Aquino',
-    idade: 31,
-    profissao: Profissao.Desenvolvedor
-}
-
-const cyndi: Estudante = {
-    nome: 'Cyndi',
-    idade: 27,
-    profissao: Profissao.SquadLeader,
-    materias: ['Gestão de Projetos', 'Projetos Ágeis', 'Gestão de Equipe']
-}
-
-function listar(lista: string[]){
-    for (const item of lista){
-        console.log('- ', item);
-    }
-}
-
-listar(cyndi.materias)
+somarStrings(valorString, valorString2);
+somarStrings('ola', ', como vai?');
